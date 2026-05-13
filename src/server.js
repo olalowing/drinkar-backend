@@ -15,7 +15,7 @@ const app = new Hono()
 app.use('*', logger())
 app.use('*', cors({
   origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
-  credentials: false,
+  credentials: true,
 }))
 
 app.get('/health', (c) => c.json({ ok: true }))
